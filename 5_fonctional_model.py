@@ -57,7 +57,7 @@ def main():
     network2_layer3 = tf.keras.layers.Dense(150, activation="relu")(network2_layer2)
     network2_layer4 = tf.keras.layers.Dense(50, activation="relu")(network2_layer3)
 
-    network_layer1 = tf.keras.layers.concatenate([network1_layer7, network2_layer4])
+    network_layer1 = tf.keras.layers.Concatenate()([network1_layer7, network2_layer4])
     network_layer2 = tf.keras.layers.Dense(50, activation="relu")(network_layer1)
     network_layer3 = tf.keras.layers.Dense(10, activation="softmax")(network_layer2)
 
