@@ -25,7 +25,7 @@ def step_decay(epoch):
     initial_lr = 0.1
     drop = 0.5
     epochs_drop = 10
-    return initial_lr * (drop ** (epoch // epochs_drop))
+    return initial_lr * (drop ** (1 + epoch // epochs_drop))
 
 def exp_decay(epoch):
     """
